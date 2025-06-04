@@ -7,7 +7,7 @@ from signLanguage.entity.artifacts_entity import (DataIngestionArtifact,
                                                   DataValidationArtifact)
 
 
-
+# Data Validation Component
 class DataValidation:
     def __init__(
         self,

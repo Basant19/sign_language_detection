@@ -8,7 +8,7 @@ from signLanguage.entity.config_entity import DataIngestionConfig
 from signLanguage.entity.artifacts_entity import DataIngestionArtifact
 
 
-
+# Data Ingestion Component
 class DataIngestion:
     def __init__(self, data_ingestion_config: DataIngestionConfig = DataIngestionConfig()):
         try:
