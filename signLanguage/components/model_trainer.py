@@ -22,13 +22,16 @@ class ModelTrainer:
 
         
         self.device = '0' if torch.cuda.is_available() else 'cpu'
-        logging.info(f"[Model Trainer] Using device: {'CUDA (GPU)' if torch.cuda.is_available() else 'CPU'}")
+        
 
     def initiate_model_trainer(self,) -> ModelTrainerArtifact:
         logging.info("Entered initiate_model_trainer method of ModelTrainer class")
+        device_name = torch.cuda.get_device_name(0) if torch.cuda.is_available() else "CPU only"
+        logging.info(f"[ModelTrainer] Device in use: {device_name}")
+
 
         try:
-            
+
             logging.info("Unzipping data")
             with zipfile.ZipFile(self.data_validation_artifact.data_zip_file_path, 'r') as zip_ref:
                 zip_ref.extractall()
